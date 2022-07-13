@@ -15,10 +15,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-
-
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.io.FileHandler;
 
 public class Base_Class {
@@ -31,7 +30,7 @@ public static WebDriver driver;
 	if (type.equalsIgnoreCase("chrome")) {
 			
 		System.setProperty("webdriver.chrome.driver",
-				"\\Myntra\\driver\\chromedriver.exe");
+				".\\chromedriver2.exe");
 			driver = new ChromeDriver();
 			
 			}
@@ -78,6 +77,26 @@ public static WebDriver driver;
 		driver.close();                                                      //5
 		
 	
+	}
+	public static boolean elementIsEnabled(WebElement element) {
+		try {
+			boolean enabled = element.isEnabled();
+			return enabled;
+		} catch (Exception e) {
+
+			e.printStackTrace();
+			throw new RuntimeException();
+		}
+	}
+
+	public static void waitforElementVisiblity(WebElement element) {
+		try {
+			WebDriverWait wb = new WebDriverWait(driver, 60);
+			wb.until(ExpectedConditions.visibilityOf(element));
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
 	}
 	public static void quit1(WebDriver driver) {
 		driver.quit();                                                  //6

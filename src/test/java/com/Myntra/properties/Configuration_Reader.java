@@ -11,7 +11,7 @@ public class Configuration_Reader {
 	public static Properties p = new Properties();
 	public Configuration_Reader() throws IOException {
 		
-	File f =new File("\\src\\test\\java\\com\\Myntra\\properties\\configration.properties");
+	File f =new File(".\\Myntra\\src\\test\\java\\com\\Myntra\\properties\\configration.properties");
 	FileInputStream fis =new FileInputStream(f);
 	p =new Properties();
 	p.load(fis);
