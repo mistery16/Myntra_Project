@@ -30,7 +30,7 @@ public static WebDriver driver;
 	if (type.equalsIgnoreCase("chrome")) {
 			
 		System.setProperty("webdriver.chrome.driver",
-				".\\chromedriver2.exe");
+				"C:\\Users\\Jarvis\\eclipse-workspace\\Myntra\\driver\\chromedriver2.exe");
 			driver = new ChromeDriver();
 			
 			}
